@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-浏览时钟</title>
+</head>
+<body>
+    <html>
+        <script>
+            //console.log(document.title);
+            //每隔0.5秒，让title最后一个文字放到title的最前面
+            // 1s=1000ms
+            //setInterval(fun,n); 每隔n秒执行代码段（函数），循环执行
+            var t = setInterval(function(){
+                console.log(new Date());
+            },1000); 
+            //不推荐使用 代码字符串的方式
+            //可以改为setInterval("console.log(new Date());",1000);
+            //第一个参数相当于执行eval()函数，执行了" "里的内容
+
+            //setTimeOut(fun,delay); 延迟delay毫秒后，执行代码段（函数），但只执行一次。
+            setTimeout(function(){
+                //停止上面的时钟
+                clearInterval(t); //停止简短循环执行的setInterval时钟
+                console.log("success to stop");
+            },5000); 
+        </script>
+    </html>
+</body>
+</html>
