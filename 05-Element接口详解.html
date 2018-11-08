@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-Element接口详解</title>
+</head>
+    <!--
+    取消单行注释：按下ctrl不放，再按k + u
+    删除整行：ctrl + shift + k
+    复制当前行：shift + alt +up/down
+    移动行：alt+up/down
+    增加/减小缩进:  ctrl + [/] 
+    代码格式化：shift + alt +f
+--
+    -->
+<body>
+
+    <div id="d1" class="cl" laoma="first">
+        <span>你好啊</span>
+        <p>我是段落标签，现在是11月8号，八周四，在图书馆一楼</p>
+    </div>
+
+    <script>
+        //获取到 id=d1 的div标签
+        var d = document.getElementById("d1");
+        console.log(d);
+        // d:HTMLDivElement  HTMLElement  Element
+        
+        //Element.id:获取元素的id
+        console.log(".id方法："+d.id);  //=>d1
+        console.log(".innerHTML方法："+d.innerHTML); 
+
+        
+        // d.attributes() 可以拿到d1的所有属性
+        console.log(d.attributes);
+        //获取attributes里的值（即d1里的属性）
+        console.log(d.attributes[0]);
+        console.log(d.attributes.item(2));
+        console.log(d.innerHTML);
+
+        //设置属性的值
+        // d.setAttribute("laoma","after"); //laoma的属性值会改为after
+        //console.log(d.getAttribute("class")); //=>cl
+
+
+
+    </script>
+</body>
+</html>
