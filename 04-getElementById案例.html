@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getElementById案例</title>
+</head>
+<body>
+    <!--
+    取消单行注释：按下ctrl不放，再按k + u
+    删除整行：ctrl + shift + k
+    复制当前行：shift + alt +up/down
+    移动行：alt+up/down
+    增加/减小缩进:  ctrl + [/] 
+    代码格式化：shift + alt +f
+--
+    -->
+    <!-- 
+        p#pss${段落$}*3 可自动生成三个p标签和文字   
+        #代表id，$前是id的值，$表示数字，花括号{}内是标签里夹杂的文字 
+    -->
+    <p id="p1">段落1</p>
+    <p id="p2">段落2</p>
+    <p id="p3">段落3</p>
+
+    <div class="" id="d1">DIV</div>
+    <!--获得段落2的标签对象-->
+    <script>
+        //根据标签的id的值在文档中搜索标签
+       var elementP = document.getElementById("p2");
+       console.log(elementP); //=> <p id="p2">段落2</p>
+       /*
+       elementP的内部原型是 HTMLParagraphElement(段落标签的原型) ，
+       HPE的内部原型是Element(所有html标签的基类接口,所有html标签都继承Element)
+       Element -> Node(节点) -> EvenTarget -> Objet -> null
+       */
+       //有哪些接口 == 有哪些属性和方法可以定义，没有具体的实现，必须由子类给它实现
+       //有实现的时候就是类型。类型：可以直接创建实例
+       var eleDiv =document.getElementById("d1");
+       console.log(eleDiv);  //=><div class="" id="d1">DIV</div>
+    </script>
+</body>
+</html>
