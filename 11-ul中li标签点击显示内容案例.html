@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ul中li标签点击显示内容</title>
+</head>
+<body>
+        <!--
+    取消单行注释：按下ctrl不放，再按k + u
+    删除整行：ctrl + shift + k
+    复制当前行：shift + alt +up/down
+    移动行：alt+up/down
+    增加/减小缩进:  ctrl + [/] 
+    代码格式化：shift + alt +f
+    -->
+</body>
+    <ul id="city">
+        <li>北京11</li>
+        <li>北京21</li>
+        <li>北京33</li>
+        <li>北京44</li>
+        <li>北京55</li>
+    </ul>
+    <script>
+        //给所有li标签绑定点击事件，并弹出li标签的内容
+        //第一步：拿到所有的li标签
+        var liNodeList = document.querySelectorAll("#city li");
+        //未优化：
+            liNodeList.forEach(function(element,index){
+                //绑定点击事件
+                element.onclick = function(){
+                    alert(this.innerHTML);
+                };
+                //此时匿名函数会循环定义5次
+                //因为：li标签的时间响应方法都是一样的，没有必要每循环一次都创建一个
+            });
+                
+
+        //优化：减少了内存消耗
+            //多个li公用一个函数对象
+        //forEach():
+            liNodeList.forEach(function(element,index){
+                element.onclick = LiOnclickHande;
+            });
+        //for：
+            for(var i = 0; i < liNodeList.length;i ++){
+                liNodeList[i].onclick = LiOnclickHande;
+            }
+
+            //li标签点击时触发执行的时间响应方法
+            function LiOnclickHande(){
+                alert(this.innerHTML);
+            }
+
+    </script>
+</html>
